@@ -16,7 +16,7 @@ function sum(a, b) { //eslint-disable-line
 }
 
 // Here is the test for sum(); uncomment it to run it
- testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -83,12 +83,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var sumIndices = sum(sum(sumArr[0], sumArr[1]) [0], sumArr[2])[0];
+
+  var feedback = sumArr[0] + ',' + 
+                 sumArr[1] + ',' + 
+                 sumArr[2] + ' was passed in as an array of numbers, and ' + sumIndices + ' is their sum.';
+  
+  return[sumIndices, feedback]; 
 
 }
 
-// Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+
+// Here is the test for sumArray(); uncomment it to run it
+ testSumArray(testArray);
+ console.log(sumArray(testArray));
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
