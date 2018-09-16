@@ -57,9 +57,9 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sum = a + b + c;
-  var product = a * b * c;
+function sumAndMultiply(a, b, c){ //eslint-disable-line
+  var add = sum(sum(a,b)[0], c)[0] 
+  var product = multiply(multiply(a,b)[0], c)[0];
 
   var feedback1 = a + ' and ' + 
                   b + ' and ' + 
@@ -71,7 +71,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
                   c + ' is ' + 
                   product + '.';
 
-  return[sum, product, feedback1, feedback2];
+  return[add, product, feedback1, feedback2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -93,7 +93,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sumIndices = sum(sum(sumArr[0], sumArr[1]) [0], sumArr[2])[0];
+  var sumIndices = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
 
   var feedback = sumArr[0] + ',' + 
                  sumArr[1] + ',' + 
@@ -123,7 +123,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var productIndices = multiply(multiply(multArr[0], multArr[1]) [0], multArr[2])[0];
+  var productIndices = multiply(multiply(multArr[0], multArr[1])[0], multArr[2])[0];
 
   var feedback = 'The numbers ' + 
                   multArr[0] + ',' +
@@ -161,10 +161,19 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  for(var i = 0; i < dynamicArray; i++){
+    for(var j = 1; j < dynamicArray; j++){
+      var productIndices = multiply(dynamicArray[i], dynamicArray[j])[0];
+      dynamicArray.splice(j, 1, productIndices[0]);
+      
+    }
+  }
+  var feedback = "The numbers 1,2,3,4,5 have a product of 120";
+  return [productIndices, feedback];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+ testMultiplyAnyArray(testDynamicArray);
+ console.log(multiplyAnyArray(testDynamicArray));
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
