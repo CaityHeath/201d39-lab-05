@@ -63,7 +63,7 @@ function sumAndMultiply(a, b, c){ //eslint-disable-line
 
   var feedback1 = a + ' and ' + 
                   b + ' and ' + 
-                  c + ' sum to ' + sum + '.';
+                  c + ' sum to ' + add + '.';
   
   var feedback2 = 'The product of ' + 
                   a + ' and ' + 
@@ -76,6 +76,7 @@ function sumAndMultiply(a, b, c){ //eslint-disable-line
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -167,12 +168,12 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   for(var i = 0; i < dynamicArray; i++){
     for(var j = 1; j < dynamicArray; j++){
       var productIndices = multiply(dynamicArray[i], dynamicArray[j])[0];
-      dynamicArray.splice(j, 1, productIndices[0]);
+      var product = dynamicArray.splice(j, 1, productIndices[0]);
       
     }
   }
   var feedback = "The numbers 1,2,3,4,5 have a product of 120"; //put the correct string just to test my function.
-  return [productIndices, feedback];
+  return [product, feedback];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
